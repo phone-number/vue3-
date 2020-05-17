@@ -1,0 +1,82 @@
+
+.mixin-scroll(@scrollWidth:8px, @scrollColor: rgba(144,147,153,.3)) {
+  &::-webkit-scrollbar {
+    width: @scrollWidth; // 0
+    height: @scrollWidth; // 0
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: @scrollWidth;
+    // background-color: transparent;
+    background-color: @scrollColor;
+  }
+  &:hover{
+    // &::-webkit-scrollbar {
+    //   width: @scrollWidth;
+    //   height: @scrollWidth;
+    // }
+    &::-webkit-scrollbar-thumb {
+      background-color: @scrollColor;
+      &:hover {
+        background: rgba(144,147,153,.5);
+      }
+    }
+  }
+}
+
+.mixin-shadow{
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5), 0 0 6px rgba(0, 0, 0, 0.4)
+}
+// 内部阴影
+.mixin-inner-shadow(@color: #536284) {
+  box-shadow: inset 1px 1px 8px 4px @color;
+}
+
+.mixin-text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.mixin-flex(@direction: row, @inline: flex) {
+  display: @inline;
+  flex-direction: @direction;
+  flex-wrap: wrap;
+}
+
+.mixin-btn(@size: 14px, @color: #fff, @baColor: #f04752, @padding: 5px, @radius: 5px) {
+  padding: @padding;
+  background-color: @baColor;
+  border-radius: @radius;
+  border: 1px solid @baColor;
+  font-size: @size;
+  color: @color;
+  text-align: center;
+  line-height: 1px;
+  display: inline-block;
+}
+
+.mixin-list(@direction: column) {
+  .mixin-flex(@direction)
+}
+
+.mixin-panel(
+  @bgcolor: #fff,
+  @padding: 0,
+  @margin: 20px 0,
+  @height: 112px,
+  @textPadding: 0 32px,
+  @color: #333,
+  @fontSize: 32px) {
+    background-color: @bgcolor;
+    padding: @padding;
+    margin: @margin;
+    >h4 {
+      height: @height;
+      line-height: @height;
+      padding: @textPadding;
+      .mixin-text-overflow();
+      text-align: center;
+      color: @color;
+      font-size: @fontSize;
+    }
+}
