@@ -12,7 +12,7 @@
     "hotcss": "^2.2.1",
     "less-loader": "^6.1.0",
     "lodash": "^4.17.15",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "vue": "^3.0.0-beta.1",
     "vue-router": "^4.0.0-alpha.10",
     "vuex": "^4.0.0-beta.2"
